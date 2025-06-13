@@ -1,0 +1,16 @@
+
+const mongoose = require("mongoose");
+mongoose.connect("mongodb://localhost:27017/calculator");
+
+
+const Log = mongoose.model("Log", {
+  num1: Number,
+  num2: Number,
+  operator: String,
+  result: String,
+  date: { type: Date, default: Date.now }
+});
+
+
+const log = new Log({ num1: n1, num2: n2, operator, result });
+log.save();
